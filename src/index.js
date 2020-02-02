@@ -19,7 +19,10 @@ const updateCaskList = caskList => {
       cask =>
         `<li class="cask block rounded p-2 mb-3 bg-white hover:bg-blue-100 leading-loose">
           <a class="text-lg font-normal text-blue-800 hover:underline" target="_BLANK" href="${cask.homepage}">${cask.name.join(" - ")}</a>
-          <code class="block font-hairline text-sm">$ brew cask install ${cask.token}<code>
+          <div class="block">
+            <code class="inline font-hairline text-sm">$ </code>
+            <code class="inline font-hairline text-sm">brew cask install ${cask.token}<code>
+          </div>
         </li>`
     )
     .join("");
