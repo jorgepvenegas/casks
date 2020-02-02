@@ -1,5 +1,4 @@
 import "./styles.css";
-import "babel-polyfill";
 
 const URL = "https://formulae.brew.sh/api/cask.json";
 let caskList = [];
