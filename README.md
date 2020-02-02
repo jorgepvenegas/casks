@@ -4,6 +4,8 @@ Search tool for macOS applications distributed as binaries.
 
 > NOTE: You'll need to install Homebrew 🍻 first in order to install applications. https://github.com/Homebrew/homebrew-cask
 
+![Casks](https://raw.githubusercontent.com/jorgepvenegas/casks/484977f412c58646ffce22705acf6d261fa15584/src/img/casks.png)
+
 ## Usage
 
 ### Clone this repo
