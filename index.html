@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Parcel Sandbox</title>
-    <meta charset="UTF-8" />
-  </head>
 
-  <body class="bg-gray-300">
-    <div id="app" class="flex my-10">
-      <div class="container mx-auto">
-        <h1 class="text-4xl mb-5">Homebrew Cask Finder</h1>
-        <input id="search" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="apache-couchdb, visual-studio-code">
-        <p id="stats" class="my-5 mx-3"></p>
-        <ul id="results"></ul>
-      </div>
+<head>
+  <title>Homebrew Cask Finder</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body class="bg-gray-300">
+  <div id="app" class="flex my-10">
+    <div class="container mx-auto">
+      <h1 class="text-4xl mb-5">Cask Finder</h1>
+      <h2 class="text-xl font-light mb-5">Search tool for macOS applications distributed as binaries in <a
+          href="https://formulae.brew.sh/cask/" class="text-blue-800 hover:underline" target="_BLANK">Homebrew 🍻</a>.
+      </h2>
+      <input id="search"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text" placeholder="apache-couchdb, visual-studio-code">
+      <p id="stats" class="my-5 mx-3"></p>
+      <ul id="results"></ul>
     </div>
-    <script src="src/index.js"></script>
-  </body>
+  </div>
+  <script src="src/index.js"></script>
+</body>
 </html>
