@@ -1,4 +1,5 @@
 import "./styles.css";
+import "babel-polyfill";
 
 const URL = "https://formulae.brew.sh/api/cask.json";
 let caskList = [];
@@ -16,21 +17,21 @@ const updateCaskList = caskList => {
   const output = caskList
     .map(
       cask =>
-        `<li>
-          <div>
-            <h3>${cask.name.join(" - ")}</h3>
-            <a target="_BLANK" href="${cask.homepage}">${cask.token}</a>
-          </div>
+        `<li class="cask block rounded p-2 mb-3 bg-white hover:bg-blue-100 leading-loose">
+          <a class="text-lg font-normal text-blue-800 hover:underline" target="_BLANK" href="${cask.homepage}">${cask.name.join(" - ")}</a>
+          <code class="block font-hairline text-sm">$ brew cask install ${cask.token}<code>
         </li>`
     )
     .join("");
   $stats.innerHTML = `Listing ${caskList.length} casks.`;
   $results.innerHTML = output;
 };
-getCaskList();
 
 const runSearch = e => {
   const output = caskList.filter(cask => cask.token.indexOf(e) === 0);
   updateCaskList(output);
 };
+
 $search.addEventListener("keyup", e => runSearch(e.target.value));
+
+getCaskList();

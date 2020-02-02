@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
   </head>
 
-  <body>
-    <div id="app">
-      <input type="text" id="search" />
-      <p id="stats"></p>
-      <ul id="results"></ul>
+  <body class="bg-gray-300">
+    <div id="app" class="flex my-10">
+      <div class="container mx-auto">
+        <input id="search" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="jane@example.com">
+        <p id="stats" class="my-5 mx-3"></p>
+        <ul id="results"></ul>
+      </div>
     </div>
-
     <script src="src/index.js"></script>
   </body>
 </html>
