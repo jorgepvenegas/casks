@@ -2,13 +2,13 @@
   "name": "casks",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@babel/runtime": "^7.15.3",
     "autoprefixer": "^9.7.4",
     "tailwindcss": "^1.1.4"
   },
