@@ -6,7 +6,7 @@
   </head>
 
   <body class="bg-gray-300">
-    <div id="app" class="flex my-10">
+    <div x-data="casks" id="app" class="flex my-10">
       <div class="container mx-auto">
         <h1 class="text-4xl mb-5">Cask Finder</h1>
         <h2 class="text-xl font-light mb-5">
@@ -19,25 +19,35 @@
           >.
         </h2>
         <input
-          id="search"
-          class="
-            bg-white
-            focus:outline-none focus:shadow-outline
-            border border-gray-300
-            rounded-lg
-            py-2
-            px-4
-            block
-            w-full
-            appearance-none
-            leading-normal
-          "
-          type="text"
-          placeholder="apache-couchdb, visual-studio-code"
-        />
-        <p id="stats" class="my-5 mx-3"></p>
-        <ul id="results"></ul>
-      </div>
+        id="search"
+        class="
+          bg-white
+          focus:outline-none focus:shadow-outline
+          border border-gray-300
+          rounded-lg
+          py-2
+          px-4
+          block
+          w-full
+          appearance-none
+          leading-normal
+        "
+        type="text"
+        placeholder="apache-couchdb, visual-studio-code"
+        x-model="searchTerm"
+      />
+      <p x-text="`Listing ${filteredItems.length} casks.`" id="stats" class="my-5 mx-3"></p>
+      <ul id="results">
+        <template x-for="cask in filteredItems">
+          <li class="cask block rounded p-2 mb-3 bg-white hover:bg-blue-100 leading-loose">
+            <a x-text="cask.name.join(`, `)" class="text-lg font-normal text-blue-800 hover:underline" target="_BLANK" x-bind:href="cask.homepage"></a>
+            <div class="block">
+              <code class="inline font-hairline text-sm">$ </code>
+              <code x-text="`brew install --cask ${cask.token}`" class="inline font-hairline text-sm"><code>
+            </div>
+          </li>
+        </template>
+      </ul>
     </div>
     <script type="module" src="src/index.js"></script>
   </body>
